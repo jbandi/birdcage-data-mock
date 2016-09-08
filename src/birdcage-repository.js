@@ -2,12 +2,12 @@
 const tweets = [
     {
         _id: 0,
-        title: 'Wow I am using JavaScript!',
+        content: 'Wow I am using JavaScript!',
         created: new Date()
     },
     {
         _id: 1,
-        title: 'Woot! I just discovered React!',
+        content: 'Woot! I just discovered React!',
         created: new Date()
     }
 ];
@@ -19,17 +19,17 @@ export default class BirdcageRepository {
         });
     }
 
-    addTweet(title) {
+    addTweet(content) {
 
-        const newTwet = {
+        const newTweet = {
             _id: Math.random(),
-            title,
+            content,
             created: new Date()
         }
 
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                tweets.push(newTwet);
+                tweets.push(newTweet);
                 resolve()
             }, 0);
         });

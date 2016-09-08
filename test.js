@@ -11,7 +11,7 @@ describe('Tweet Repository', () => {
 
     it('should add a tweet', async () => {
         const initialTweets = await repo.getTweets();
-        await repo.addTweet({});
+        await repo.addTweet(`Hello at ${new Date()}`);
         const newTweets = await repo.getTweets();
         assert.equal(initialTweets.length + 1, newTweets.length);
     })
